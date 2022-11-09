@@ -122,8 +122,8 @@ const applyDiscounts = (arr, callBack, discount) => {
 
 const applyDiscountsByCategory = (arr, category, callBack, discount) => {
     arr.forEach(product => {
-        if(product.category === category) {
-        callBack(product, discount);
+        if (product.category === category) {
+            callBack(product, discount);
         };
     });
 
@@ -140,7 +140,36 @@ const applyDiscountsByCategory = (arr, category, callBack, discount) => {
 
 // CODE HERE
 
+function makeSandwich(bread) {
+    return function (ingredients) {
+        let order = `You ordered a ${bread} bread sandwich with `;
 
+        for (let i = 0; i < ingredients.length; i++) {
+            // end of ingredients list
+            if(i === ingredients.length - 1) {
+                order += `and ${ingredients[i]}.`
+            } 
+            // one ingredient
+            else if (ingredients.length === 1) {
+            order += `${ingredients[i]}.`
+            } 
+            // 
+            else {
+                order += `${ingredients[i]}, `
+            }
+        }
+        return order;
+    }
+}
+
+const makeWheatSandwich = makeSandwich('Wheat');
+const makeSourDoughSandwich = makeSandwich('Sour Dough');
+
+let sand1 = makeWheatSandwich(['turkey', 'lettuce', 'pickles', 'pineapple']);
+let sand2 = makeSourDoughSandwich(['roast beef', 'sour cream', 'onions']);
+
+console.log(sand1)
+console.log(sand2);
 
 ////////////////////////////////////
 ////// COPY AND CHANGE ARRAYS //////

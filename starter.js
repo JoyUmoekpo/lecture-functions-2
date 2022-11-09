@@ -242,7 +242,7 @@ const copyArrAndChange = (arr, callBack) => {
 }
 
 let res = copyArrAndChange(myArr, multiplyByFour);
-console.log(res);
+// console.log(res);
 
 ////////////////////////////////////////
 ////// HIGHER ORDER ARRAY METHODS //////
@@ -258,9 +258,8 @@ console.log(res);
 
 const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 
-const mappedColors = 0; // = colors.map()
-
-
+const mappedColors = colors.map((element) => 'pink');
+// console.log(mappedColors);
 
 /*
     Edit the formalGreeting function and use the built in .map method 
@@ -274,10 +273,13 @@ const formalNames = ['Bernard', 'Elizabeth', 'Conrad', 'Mary Margaret']
 
 const formalGreeting = names => {
     // CODE HERE
-}
+    let formalArry = names.map((name) => `Hello, ${name}`);
+    return formalArry;
+};
 
 // Call formalGreeting passing in the formalNames array
-
+let fnames = formalGreeting(formalNames);
+console.log(fnames);
 
 //// FILTER ////
 

@@ -146,13 +146,13 @@ function makeSandwich(bread) {
 
         for (let i = 0; i < ingredients.length; i++) {
             // end of ingredients list
-            if(i === ingredients.length - 1) {
+            if (i === ingredients.length - 1) {
                 order += `and ${ingredients[i]}.`
-            } 
+            }
             // one ingredient
             else if (ingredients.length === 1) {
-            order += `${ingredients[i]}.`
-            } 
+                order += `${ingredients[i]}.`
+            }
             // 
             else {
                 order += `${ingredients[i]}, `
@@ -200,10 +200,10 @@ const copyArrToCamelCase = arr => {
 
             camelCaseStr += word
         }
-        
+
         newArr.push(camelCaseStr)
     }
-    
+
     return newArr
 }
 
@@ -211,7 +211,7 @@ const copyArrToCamelCase = arr => {
 
 const copyArrToSnakeCase = arr => {
     const newArr = []
-    
+
     for (let i = 0; i < arr.length; i++) {
         let str = arr[i]
         str = str.toLowerCase()
@@ -219,7 +219,7 @@ const copyArrToSnakeCase = arr => {
         const snakeCaseStr = splitStr.join('_')
         newArr.push(snakeCaseStr)
     }
-    
+
     return newArr
 }
 
@@ -227,7 +227,7 @@ const copyArrToSnakeCase = arr => {
 
 // CODE HERE
 
-let myArr = [1,2,3,4,5,6];
+let myArr = [1, 2, 3, 4, 5, 6];
 
 const multiplyByFour = num => num * 4;
 
@@ -326,9 +326,12 @@ let jobs = [{
 // CODE HERE
 
 let identifier = jobs.filter((job) => job.programmer)[0];
+// console.log(identifier);
 
-console.log(identifier);
-
+let {
+    programmer
+} = identifier;
+// console.log(programmer);
 // call the function passing in the jobs array
 
 
@@ -346,6 +349,12 @@ const numsToReduce = [43, 7, 24, 79, 290]
 
 const productOfArray = numbers => {
     // Code here
+    let reduced = numbers.reduce((acc, curr) => acc * curr);
+
+    //With accumulator
+    // let reduced = numbers.reduce((acc, curr) => {acc * curr}, 5);
+
+    return reduced;
 }
 
 // CODE HERE
@@ -353,6 +362,8 @@ const productOfArray = numbers => {
 
 // call productOfArray passing in numsToReduce
 
+let result = productOfArray(numsToReduce);
+// console.log(result);
 
 /*
     Pass a callback and an initial value to reduce 
@@ -379,4 +390,6 @@ const expenses = [{
     }
 ]
 
-const remaining = 0; // = expenses.reduce(//callback, //initial value)
+// CODE HERE                                          callback      initial value
+const remaining = expenses.reduce((acc, curr) => acc - curr.amount, budget);
+// console.log(remaining);

@@ -16,11 +16,11 @@ const multiply = (num1, num2) => num1 * num2;
 //cleaning up data, make 
 
 // calculator is a higher order function as well (it uses a callback function as an argument and returns a function - a higher order function does either one)
-const calculator = (num1, num2, mathOperation) =>{
+const calculator = (num1, num2, mathOperation) => {
 
     // +num1 is shorthand for Number(num1), converts to number
-    
-    if(+num1 && num2) {
+
+    if (+num1 && num2) {
         num1 = +num1;
         num2 = +num2;
         return mathOperation(num1, num2);
@@ -34,10 +34,9 @@ const calculator = (num1, num2, mathOperation) =>{
 // const results = calculator(50, 30, add);
 // const results = calculator(50, 30, subtract);
 // const results = calculator(50, 30, divide);
-const results = calculator(50, 30, multiply);
+// const results = calculator(50, 30, multiply);
 
-
-console.log(results);
+// console.log(results);
 
 ///////////////////////
 ////// PET STORE //////
@@ -97,7 +96,33 @@ const catProducts = [{
 
 // CODE HERE
 
+const applyPercentDiscount = (product, discount) => {
+    product.displayPrice = product.basePrice * (1 - discount);
+}
 
+const applyFlatDiscount = (product, discount) => {
+    product.displayPrice = product.basePrice - discount;
+}
+
+// const applyDiscounts = (arr, callBack, discount) {
+
+// }
+
+const applyDiscounts = (arr, callBack, discount) => {
+    arr.forEach(product => {
+        callBack(product, discount);
+    })
+}
+
+console.log('Dog Discounts:')
+applyDiscounts(dogProducts, applyPercentDiscount, .1);
+console.log(dogProducts);
+
+console.log('----------------------');
+
+console.log('Cat Discounts:')
+applyDiscounts(catProducts, applyFlatDiscount, 2);
+console.log(catProducts);
 
 ////////////////////////
 ////// SANDWICHES //////
@@ -280,4 +305,4 @@ const expenses = [{
     }
 ]
 
-const remaining = 0;// = expenses.reduce(//callback, //initial value)
+const remaining = 0; // = expenses.reduce(//callback, //initial value)

@@ -200,13 +200,14 @@ const copyArrToCamelCase = arr => {
 
             camelCaseStr += word
         }
-
+        
         newArr.push(camelCaseStr)
     }
-
+    
     return newArr
 }
 
+// console.log(copyArrToCamelCase(lotr));
 
 const copyArrToSnakeCase = arr => {
     const newArr = []
@@ -222,11 +223,26 @@ const copyArrToSnakeCase = arr => {
     return newArr
 }
 
-// CODE HERE
-
-// console.log(copyArrToCamelCase(lotr));
 // console.log(copyArrToSnakeCase(lotr));
 
+// CODE HERE
+
+let myArr = [1,2,3,4,5,6];
+
+const multiplyByFour = num => num * 4;
+
+const copyArrAndChange = (arr, callBack) => {
+    let results = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let newValue = callBack(arr[i]);
+        results.push(newValue);
+    }
+    return results;
+}
+
+let res = copyArrAndChange(myArr, multiplyByFour);
+console.log(res);
 
 ////////////////////////////////////////
 ////// HIGHER ORDER ARRAY METHODS //////
@@ -243,6 +259,8 @@ const copyArrToSnakeCase = arr => {
 const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 
 const mappedColors = 0; // = colors.map()
+
+
 
 /*
     Edit the formalGreeting function and use the built in .map method 

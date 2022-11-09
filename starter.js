@@ -4,6 +4,40 @@
 
 // CODE HERE
 
+const add = (num1, num2) => num1 + num2;
+const subtract = (num1, num2) => num1 - num2;
+const divide = (num1, num2) => num1 / num2;
+const multiply = (num1, num2) => num1 * num2;
+
+// make sure arguments are always numbers, part of calculator logic
+// making higher order calculator
+
+//mathOperation is our callback function here
+//cleaning up data, make 
+
+// calculator is a higher order function as well (it uses a callback function as an argument and returns a function - a higher order function does either one)
+const calculator = (num1, num2, mathOperation) =>{
+
+    // +num1 is shorthand for Number(num1), converts to number
+    
+    if(+num1 && num2) {
+        num1 = +num1;
+        num2 = +num2;
+        return mathOperation(num1, num2);
+    } else {
+        console.log('You need to send in numbers')
+    }
+
+    return mathOperation(num1, num2);
+}
+
+// const results = calculator(50, 30, add);
+// const results = calculator(50, 30, subtract);
+// const results = calculator(50, 30, divide);
+const results = calculator(50, 30, multiply);
+
+
+console.log(results);
 
 ///////////////////////
 ////// PET STORE //////
@@ -136,7 +170,7 @@ const copyArrToSnakeCase = arr => {
 
 const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 
-const mappedColors // = colors.map()
+const mappedColors = 0; // = colors.map()
 
 /*
     Edit the formalGreeting function and use the built in .map method 
@@ -164,7 +198,7 @@ const formalGreeting = names => {
 
 const places = ['Binghampton', 'Albany', 'New York', 'Ithaca', 'Auburn', 'Rochester', 'Buffalo']
 
-const placesThatStartWithA // = places.filter()
+const placesThatStartWithA = 0; // = places.filter()
 
 
 /*
@@ -246,4 +280,4 @@ const expenses = [{
     }
 ]
 
-const remaining // = expenses.reduce(//callback, //initial value)
+const remaining = 0;// = expenses.reduce(//callback, //initial value)

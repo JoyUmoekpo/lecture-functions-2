@@ -279,9 +279,11 @@ const formalGreeting = names => {
 
 // Call formalGreeting passing in the formalNames array
 let fnames = formalGreeting(formalNames);
-console.log(fnames);
+// console.log(fnames);
 
 //// FILTER ////
+
+// filters return booleans
 
 /*
     Pass a callback to filter that will return
@@ -290,8 +292,9 @@ console.log(fnames);
 
 const places = ['Binghampton', 'Albany', 'New York', 'Ithaca', 'Auburn', 'Rochester', 'Buffalo']
 
-const placesThatStartWithA = 0; // = places.filter()
+const placesThatStartWithA = places.filter(place => place[0] == 'A');
 
+// console.log(placesThatStartWithA);
 
 /*
     Create a function called identifier that uses the filter higher order 
@@ -321,6 +324,10 @@ let jobs = [{
 // Do not edit the code above.
 
 // CODE HERE
+
+let identifier = jobs.filter((job) => job.programmer)[0];
+
+console.log(identifier);
 
 // call the function passing in the jobs array
 

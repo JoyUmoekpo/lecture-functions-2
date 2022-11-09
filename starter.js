@@ -168,8 +168,8 @@ const makeSourDoughSandwich = makeSandwich('Sour Dough');
 let sand1 = makeWheatSandwich(['turkey', 'lettuce', 'pickles', 'pineapple']);
 let sand2 = makeSourDoughSandwich(['roast beef', 'sour cream', 'onions']);
 
-console.log(sand1)
-console.log(sand2);
+// console.log(sand1)
+// console.log(sand2);
 
 ////////////////////////////////////
 ////// COPY AND CHANGE ARRAYS //////
@@ -178,20 +178,24 @@ console.log(sand2);
 const lotr = ['biLbO BaGGINs', 'leGOlAs', 'Frodo bAGGINS', 'sAMwiSe GamGEe', 'gAndALF tHe GREY']
 
 const copyArrToCamelCase = arr => {
-    const newArr = []
-
+    const newArr = [] // ['bilboBaggins']
+    // i = 0
     for (let i = 0; i < arr.length; i++) {
-        const str = arr[i]
-        const splitStr = str.split(' ')
-        let camelCaseStr = ''
+        const str = arr[i] // 'biLbO BaGGINs'
+        const splitStr = str.split(' '); // '['biLbO', 'BaGGINs']
+        let camelCaseStr = '' // 'bilboBaggins'
+
+        // x = 1
 
         for (let x = 0; x < splitStr.length; x++) {
-            let word = splitStr[x]
+            let word = splitStr[x] //'BaGGINs'
 
-            word = word.toLowerCase()
+            word = word.toLowerCase() // 'baggins'
+
 
             if (x !== 0) {
-                word = word.charAt(0).toUpperCase() + word.slice(1)
+                //            'B'                   + 'aggins'
+                word = word.charAt(0).toUpperCase() + word.slice(1) // 'Baggins'
             }
 
             camelCaseStr += word
@@ -203,9 +207,10 @@ const copyArrToCamelCase = arr => {
     return newArr
 }
 
+
 const copyArrToSnakeCase = arr => {
     const newArr = []
-
+    
     for (let i = 0; i < arr.length; i++) {
         let str = arr[i]
         str = str.toLowerCase()
@@ -213,11 +218,14 @@ const copyArrToSnakeCase = arr => {
         const snakeCaseStr = splitStr.join('_')
         newArr.push(snakeCaseStr)
     }
-
+    
     return newArr
 }
 
 // CODE HERE
+
+// console.log(copyArrToCamelCase(lotr));
+// console.log(copyArrToSnakeCase(lotr));
 
 
 ////////////////////////////////////////

@@ -104,25 +104,35 @@ const applyFlatDiscount = (product, discount) => {
     product.displayPrice = product.basePrice - discount;
 }
 
-// const applyDiscounts = (arr, callBack, discount) {
-
-// }
-
 const applyDiscounts = (arr, callBack, discount) => {
     arr.forEach(product => {
         callBack(product, discount);
     })
 }
 
-console.log('Dog Discounts:')
-applyDiscounts(dogProducts, applyPercentDiscount, .1);
-console.log(dogProducts);
+// console.log('Dog Discounts:')
+// applyDiscounts(dogProducts, applyPercentDiscount, .1);
+// console.log(dogProducts);
 
-console.log('----------------------');
+// console.log('----------------------');
 
-console.log('Cat Discounts:')
-applyDiscounts(catProducts, applyFlatDiscount, 2);
-console.log(catProducts);
+// console.log('Cat Discounts:')
+// applyDiscounts(catProducts, applyFlatDiscount, 2);
+// console.log(catProducts);
+
+const applyDiscountsByCategory = (arr, category, callBack, discount) => {
+    arr.forEach(product => {
+        if(product.category === category) {
+        callBack(product, discount);
+        };
+    });
+
+    // arr.filter(prod => prod.category).forEach(prod => callBack(prod, discount));
+};
+
+// console.log('Dog Category Discounts');
+// applyDiscountsByCategory(dogProducts, 2, applyPercentDiscount, .2);
+// console.log(dogProducts);
 
 ////////////////////////
 ////// SANDWICHES //////
